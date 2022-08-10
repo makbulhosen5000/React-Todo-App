@@ -1,5 +1,5 @@
-import { Button } from 'react-bootstrap';
 
+import style from './todo.module.css';
 
 import React from 'react'
 
@@ -7,11 +7,10 @@ function todo(props) {
 
     const {id,title,desc} = props.todo;
   return (
-    <article>
-             <h1> {id} </h1>
-             <h1> {title} </h1>
+    <article className={style.todo}>
+             <h3> {title} </h3>
              <p> {desc} </p>
-             <Button className="btn btn-danger">  <i className='fas fa-trash'></i> </Button>     
+             <button className={style.btn}><i className='fas fa-trash'></i> </button>     
     </article>
   )
 }
