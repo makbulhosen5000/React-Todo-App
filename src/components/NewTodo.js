@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import style from './newtodo.module.css'
 
-function NewTodo() {
+function NewTodo(props) {
   const [todo,setTodo] = useState({title:"",desc:""});
   const {title,desc} = todo;
 
@@ -12,7 +12,9 @@ function NewTodo() {
    })
   }
   const formHandler = (e) =>{
+    props.onSendTodo(todo);
    e.preventDefault();
+   setTodo({title:"", desc:""})
   }
   return (
     <form className={style.form} onSubmit={formHandler}>
