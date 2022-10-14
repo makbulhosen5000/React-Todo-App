@@ -16,12 +16,20 @@ function Home() {
         return [...prevTodo,{id:uuidv4(),catchTodo}]
        })
   }
+
+  const handleRemoveTodo = (id) =>{
+   
+    setTodos((prevTodos)=>{
+      const filteredTodos = prevTodos.filter((catchTodo)=>catchTodo.id !== id); 
+      return filteredTodos;
+    });
+  }
   
   return (
     <div className={style.container}>
        <h1 style={{ color:'white' }}> Todo App </h1>
         <NewTodo onSentTodos={handleAddTodo} />
-        <Todos todos={todos} />
+        <Todos todos={todos} onRemoveTodo={handleRemoveTodo} />
     </div>
   )
 }

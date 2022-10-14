@@ -6,7 +6,10 @@ function Todos(props) {
   console.log(props.todos);
   return (
     <section className={style.todos}>
-          {props.todos.map((todo)=> <Todo todo={todo.todo}  key={todo.id}  /> )}
+          {props.todos.map((todo) => <Todo todo={todo.catchTodo}  key={todo.id} id={todo.id} onRemoveTodo={props.onRemoveTodo} />
+          
+           )}
+
     </section>
   )
 }
